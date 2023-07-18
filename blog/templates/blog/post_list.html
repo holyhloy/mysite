@@ -6,17 +6,12 @@
         <div>
             <h1><a href="/">Stereo Bear</a></h1>
         </div>
-
-        <div>
-            <p>published: 18.07.2023, 16:07</p>
-            <h2><a href="">eeeee rock</a></h2>
-            <p>Top 5 scariest jumpscares. Numero Uno</p>
-        </div>
-
-        <div>
-            <p>published: 09.07.1924, 18:47</p>
-            <h2><a href="">WOW</a></h2>
-            <p>damn, i'm tired of this shit</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
